@@ -7,6 +7,7 @@ import 'profile.dart';
 import 'freelance.dart';
 import 'misc.dart';
 import 'talent.dart';
+import 'banners.dart';
 import 'learn.dart';
 
 // ───────────── Home ─────────────
@@ -88,18 +89,7 @@ class HomeTab extends StatelessWidget {
           const Icon(Icons.chevron_right),
         ]),
       ),
-      Box(
-        padding: const EdgeInsets.all(18),
-        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Text('FEATURED', style: TextStyle(fontSize: 11, letterSpacing: 1.5, color: context.mutedc)),
-          const SizedBox(height: 6),
-          const Text('Your career,\nsmarter.', style: TextStyle(fontSize: 26, fontWeight: FontWeight.w700, height: 1.1)),
-          const SizedBox(height: 8),
-          const Text('Let AI review your profile, find skill gaps and surface the right opportunities.'),
-          const SizedBox(height: 14),
-          SizedBox(width: 190, child: Btn('Try AI Assistant', icon: Icons.auto_awesome, onTap: () => push(context, const AiAssistantScreen()))),
-        ]),
-      ),
+      const FeaturedCarousel(),
       const SizedBox(height: 6),
       Row(children: [
         quick(Icons.search, 'Find Jobs', () => s.setTab(1)),
